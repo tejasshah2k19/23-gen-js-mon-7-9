@@ -12,11 +12,27 @@
 
         //read all input 
         let firstName = document.getElementById("firstName").value;
+        let email = document.getElementById("email").value; 
+        let password = document.getElementById("password").value; 
+        
+        let error = "";
 
         if(firstName == undefined || firstName == "" || firstName.trim().length == 0 ){
-                alert("Please Enter FirstName");
+                error = "Please Enter FirstName\n"
+        } 
+         
+        if(email == undefined || email == "" || email.trim().length == 0 ){
+                error = error + "Please Enter Email\n" ;
+        }
+        
+        if(password==undefined || password == "" || password.trim().length == 0 ){
+            error = error + "Please Enter Password\n";
+        } 
+
+        if(error == ""){
+            alert("Signup done");
         }else{
-            alert("Signup Done");
+            alert(error);
         }
 
 
