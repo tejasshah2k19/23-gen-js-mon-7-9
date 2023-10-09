@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+            function add(){
+            
+                let textN1 = document.getElementById("n1");
+                let texN2 = document.getElementById("n2"); 
+
+                let n1 = parseInt(textN1.value)
+                let n2 = parseInt(texN2.value)                
+
+               let ans = n1 + n2; 
+            //    alert("add => "+ans);
+            // document.write(ans);
+                let divAns = document.getElementById("ans");
+                divAns.innerHTML = "addition is : <br>"+ans; 
+
+             }
+
+             //document -> write() getElementById()
+    </script>
+</head>
+<body>
+    
+    <form>
+        No.1 : <input type="text" id="n1" value="25"  >
+        <br><br>
+        No.2 : <input type="text" id="n2">
+        <br><Br>
+            <input type="button" onclick="add()" value="Add"> 
+
+    </form>
+    <br>
+    <div id="ans"></div>
+     
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+
+<script>
+
+    function signup(){
+
+        //read all input 
+        let firstName = document.getElementById("firstName").value;
+
+        if(firstName == undefined || firstName == "" || firstName.trim().length == 0 ){
+                alert("Please Enter FirstName");
+        }else{
+            alert("Signup Done");
+        }
+
+
+        //if all inputs are present 
+        //else 
+            //error 
+    }
+
+   
+</script>
+
+</head>
+<body>
+
+    FirstName :  <input type="text" id="firstName"/><br><br>
+    Email :  <input type="text" id="email"/><br><br>
+    Password : <input type="password" id="password"/><br><Br>
+
+    <input type="button" value="Signup"  onclick="signup()" />    
+    
+</body>
+</html>

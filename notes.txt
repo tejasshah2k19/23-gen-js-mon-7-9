@@ -1,0 +1,149 @@
+HTML -> static 
+
+    create web page / n page -> website 
+    home , login , signup , etc 
+
+CSS -> 
+
+
+
+JS -> 
+    dynamic 
+
+
+    Good Morning , 
+
+    Good Evening, 
+
+---------------------------------------------------------
+
+js -> 
+
+frontend development 
+backend development 
+fullstack 
+
+
+website -> signup login addtocart checkout -> frontend 
+
+firstName,email,password [submit] -> server -> save database  -> backend 
+
+fullstack developer {frontend+backend}
+
+HTML -> frontend 
+CSS  -> frontend 
+JS   -> frontend + backend 
+
+frontend -> webbrowser-> google chrome , safari , brave , edge , IE 
+
+
+C -> program -> 
+
+------------------------------------------------------------------
+how ? 
+html -> css , js 
+
+
+java script -> two way 
+1) inside html [ internal js ]
+2) outside html [ external js ]
+--------------------------------------
+
+
+1) create an html page that print your name using javascript.
+
+
+a = 10 
+
+
+let == var 
+const -> not modify
+
+const a = 10  
+
+var b;
+let b; 
+
+var b =10;
+let b = 10;
+
+frameworks -> a = 10; 
+
+-----------------------------------------------------
+
+
+function -> keyword is used to create function in js 
+---------------------------------------------------------
+
+js -> scripting lang -> similiar to program 
+
+
+html -> 1) internal js 
+        2) external js 
+
+
+
+<script language="javascript">
+
+</script>
+
+HEAD -> 
+BODY -> END 
+
+
+document.write("hi");
+
+alert("Hi");
+
+prompt("Enter Name")
+
+confirm("Are you sure?")
+
+-----------------------------------------------------------------
+
+js-> html -> modification 
+
+
+function 
+
+event -> click -> button -> radiobutton -> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
