@@ -12,19 +12,32 @@
                 let n2 = document.getElementById("n2").value
                 let choice  = document.getElementById("choice").value
 
-                if(n1 == undefined||  n1 == "" || n1.trim().length == 0 ){
+                let digitRegEx = /[0-9]+$/
+ 
 
+                
+
+                error = "";
+                if(n1 == undefined||  n1 == "" || n1.trim().length == 0 ){
+                    error = error + "Please Enter N1<br>";
+                }else if(digitRegEx.test(n1) == false){
+                    error = error + "Please Enter Valid N1<br>";
                 }
 
                 if(n2 == undefined||  n2 == "" || n2.trim().length == 0 ){
+                    error = error + "Please Enter N2<br>";
+                }else if(digitRegEx.test(n2) == false)
+                {
+                    error = error + "Please Enter Valid N2<br>";
                     
                 }
-
                 
                 if(choice == undefined||  choice == "-1" ){
-                    
+                    error = error + "Please Enter Choice<br>";
                 }
 
+
+              if(error == ""){ 
 
                 n1 =  parseInt(n1);
                 n2 =  parseInt(n2);
@@ -38,6 +51,10 @@
                 }
 
                 document.getElementById("result").innerHTML = ans; 
+            }else{ 
+                document.getElementById("result").innerHTML = error; 
+           
+            }
                  
             }
     </script>
