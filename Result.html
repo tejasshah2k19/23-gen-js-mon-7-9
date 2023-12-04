@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <center>
+                    <h2>Result</h2>
+                </center>
+                <form>
+
+                    <div class="form-group">
+                        Name : <input type="text" id="name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        Maths: <input type="text" id="maths" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        Sci : <input type="text" id="sci" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        Eng : <input type="text" id="eng" class="form-control" />
+                    </div>
+                    <br>
+                    <input type="button" onclick="calculateResult()" class="btn btn-primary" value="Calculate Result" />
+                    <input type="button" onclick="printAllUsers()" class="btn btn-success" value="View All Data" />
+
+                    <br>
+                    <div id="ans">
+                    </div>
+                    <table id="myTable" border="1" height="50%" width="50%" style="visibility: hidden;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Maths</th>
+                                <th>Sci</th>
+                                <th>Eng</th>
+                                <th>Percentage</th>    
+                            </tr> 
+                        </thead>
+                    </table>
+                </form>
+
+            </div>
+            <div class="col-md-3"></div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        let allUsers = []
+
+        function calculateResult() {
+            let name = document.getElementById("name").value;
+            let maths = document.getElementById("maths").value;
+            let sci = document.getElementById("sci").value;
+            let eng = document.getElementById("eng").value;
+            let ans = document.getElementById("ans");
+
+            maths = parseInt(maths);
+            sci = parseInt(sci);
+            eng = parseInt(eng);
+
+            let percentage = (maths + sci + eng) / 3;
+
+            ans.innerHTML = percentage;
+
+            let user = {
+                "name": name,
+                "maths": maths,
+                "sci": sci,
+                "eng": eng,
+                "percentage": percentage
+            }
+
+            allUsers.push(user);
+        }
+
+
+        function printAllUsers() {
+            let table = document.getElementById("myTable"); 
+            let ans = document.getElementById("ans");
+
+            table.style = "visibility:visible";
+
+
+            for (let i = 0; i < allUsers.length; i++) {
+                 let row = document.createElement("tr"); //row 
+                
+                 let c1 = document.createElement("td"); //column
+                 let c2 = document.createElement("td");
+                 let c3 = document.createElement("td");
+                 let c4 = document.createElement("td");
+                 let c5 = document.createElement("td");
+                 
+                c1.innerHTML = allUsers[i].name ; 
+                c2.innerHTML = allUsers[i].maths; 
+                c3.innerHTML = allUsers[i].sci; 
+                c4.innerHTML = allUsers[i].eng; 
+                c5.innerHTML = allUsers[i].percentage; 
+
+                row.appendChild(c1);
+                row.appendChild(c2);
+                row.appendChild(c3);
+                row.appendChild(c4);
+                row.appendChild(c5);
+                
+                table.appendChild(row); 
+            }
+        }
+    </script>
+</body>
+
+</html>

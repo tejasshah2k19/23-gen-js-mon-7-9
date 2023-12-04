@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="ans"></div>
+    <script>
+
+        let a = 10; 
+        let arr = [] ;
+        let x = [11,22,33,12.12,"royal"];
+        
+        let ansDiv = document.getElementById("ans"); 
+        ansDiv.innerHTML = x; 
+
+        //array can be access via index 
+        //x[0] = 0 -> index 
+        //array index starts with 0 
+        //array index ends with size-1 , n-1 , lenght-1
+         //royal -> x[4]; size-> 5 
+
+        //length -> keyword -> return the size of an array -> return how many elements store inside array 
+
+        // alert(x.length);     
+        let search = 22; 
+        for(let i=0;i<x.length;i++){
+            if(x[i] == search)
+            {
+                alert(search+" Found at "+i+" index");
+                break; 
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <img src="on.png"  onclick="changeImage()" id="img"/>
+
+
+    <script>
+    let counter = 0; 
+
+        function blast(){
+            let img = document.getElementById("img");
+            img.src = "";
+        }
+        setTimeout(blast,1000*10);
+
+        function changeImage(){
+         
+            let img = document.getElementById("img");
+            imgSrc = img.src; //localhost/off.png 
+            //-1 
+            //# =-> -1 
+            if( imgSrc.indexOf("on") == -1 ){
+            //    alert("Its off"); 
+               //on
+               img.src = "on.png";
+
+            }else if(  imgSrc.indexOf("off") == -1 ) {
+                // alert("Its On");
+                //off 
+                img.src = "off.png";
+            }
+            //off -> on 
+            //on -> off 
+            counter++; //2 
+
+            if(counter == 5){
+                img.src = ""; 
+            }
+
+        }
+
+    </script>
+</body>
+</html>

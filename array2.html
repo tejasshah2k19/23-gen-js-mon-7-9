@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    No: <input type="text" id="num"/><br>
+    <input type="button" value="Print" onclick="print()"/>
+    <br><br>
+    <div id="result"></div>
+
+    <script>
+        function print(){
+
+            
+            let a = [ ]
+            let b = [10,20,30,40,50] 
+            let num = document.getElementById("num").value;
+            let result = document.getElementById("result");
+            let ans = "";
+           
+            result.innerHTML ="";
+
+             for(let x=1;x<=num;x++){ 
+                let tmp = b[0]; 
+                for(let i=0;i<b.length - 1;i++){
+                        b[i] = b[i+1];
+                }
+                b[b.length-1] = tmp; 
+            }
+
+            for(let i=0;i<b.length;i++){
+                result.innerHTML = result.innerHTML + b[i] +",";
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

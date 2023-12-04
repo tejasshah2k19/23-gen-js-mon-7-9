@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="time"></div>
+
+    <script>
+        function printTime(){
+            let k = new Date();
+            let h = k.getHours();
+            let m = k.getMinutes();
+            let s = k.getSeconds();
+
+           let timeDiv = document.getElementById("time"); 
+             
+          timeDiv.innerHTML = h+":"+m+":"+s;  
+
+
+          setTimeout(printTime,1000); //ms 
+
+        }
+
+        printTime(); //1 time 
+    </script>
+</body>
+</html>
