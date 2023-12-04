@@ -117,6 +117,108 @@ event -> click -> button -> radiobutton ->
 
 
 
+js -> 
+
+in which tag we can write js ? script 
+
+how many ways we have to write js for html file ? two
+1) internal - inside the html file
+2) external - seprate .js file then link that js file into html file 
+
+
+how many popup we have in js ? 3 
+alert , confirm , prompt 
+
+
+how to print something on html page using js? 
+    document.write()
+
+
+how to read text box value using js ? 
+    document.getElementById("xxx").value 
+
+how to modify / add content for div tag using js ? 
+    let x = document.getElementById("divid")
+    x.innerHTML = "data" 
+
+___const____ keyword is used to create constant variable in js ?
+
+
+___let_____ and ___var___keyword is used to create a variable in js? 
+
+__function___ keyword is used to create function in js ? 
+
+--------------------------------------------------------------------------------------
+
+create js script that print current time on every 10 seconds. 
+
+
+comments -> internal document 
+
+type -> 2 type -> 1) single line // 
+                  2) multi line /* */ 
+
+array -> 1)search 
+         2)find max value from an array 
+         3)count total odd numbers in an array 
+         
+4) create html file that ask user a number 
+        in text box if user input 1 then we need to print only 1 element from array 
+        in text box if user input 3 then we need to print 3 items from array 
+        if user input more than size then we need to print please enter valid size 
+        [your array size is 10]
+
+XML 
+
+json -> 
+    1) data wrap { }
+    2) key:value , firstName:DhirajSir,lastName:Poojara,city:Ahmedabad,age:40,luckyNum:40  
+
+    let user = {
+        firstName:DhirajSir,lastName:Poojara,city:Ahmedabad,age:40,luckyNum:40
+    }
+
+
+
+  [  10 ]
+  Add Sort Print 
+
+array -> 10 2 30 -13 50 45 
+ASC ORDER PRINT 
+
+----------------------------------------------
+
+json -> 
+        {key:value}
+
+
+array -> [ ] 
+
+x = [ ]
+
+x.push(10);
+
+-----------------------------------------
+
+struct ->  
+    name 
+    maths
+    sci 
+    eng 
+    percentage 
+    grade 
+
+
+5 users 
+
+CSS 
+
+bootstrap --> 
+
+
+
+
+
 
 
 
