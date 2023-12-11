@@ -43,7 +43,7 @@
                     <br>
                     <div id="ans">
                     </div>
-                    <table id="myTable" border="1" height="50%" width="50%" style="visibility: hidden;">
+                    <table id="myTable" border="2" height="50%" width="50%" style="visibility: hidden;">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -51,6 +51,7 @@
                                 <th>Sci</th>
                                 <th>Eng</th>
                                 <th>Percentage</th>    
+                                <th>Action</th>
                             </tr> 
                         </thead>
                     </table>
@@ -66,6 +67,55 @@
 
     <script>
         let allUsers = []
+
+        let user1 = {
+                "name": "Rock",
+                "maths": 1,
+                "sci": 1,
+                "eng": 1,
+                "percentage": 1
+            }
+
+            let user2 = {
+                "name": "Thor",
+                "maths": 2,
+                "sci": 2,
+                "eng": 2,
+                "percentage": 2
+            }
+
+            let user3 = {
+                "name": "Lokie",
+                "maths": 3,
+                "sci": 3,
+                "eng": 3,
+                "percentage": 3
+            }
+
+            let user4 = {
+                "name": "Spidy",
+                "maths": 4,
+                "sci": 4,
+                "eng": 4,
+                "percentage": 4
+            }
+
+            let user5 = {
+                "name": "WonderWoman",
+                "maths": 5,
+                "sci": 5,
+                "eng": 5,
+                "percentage": 5
+            }
+
+            allUsers.push(user1);
+            allUsers.push(user2);
+            allUsers.push(user3);
+            allUsers.push(user4);
+            allUsers.push(user5);
+            
+
+
 
         function calculateResult() {
             let name = document.getElementById("name").value;
@@ -93,6 +143,18 @@
             allUsers.push(user);
         }
 
+        function deleteUser(index){
+            index = parseInt(index); 
+           // alert("delete user called=>  "+ index);
+            console.log("delete => "+index);
+           // let myTable = document.getElementById("myTable");
+           // myTable.rows[index].remove(); 
+            // allUsers.slice(index,index+1);
+            allUsers.splice(index,1); 
+
+            printAllUsers();
+        }
+
 
         function printAllUsers() {
             let table = document.getElementById("myTable"); 
@@ -100,7 +162,18 @@
 
             table.style = "visibility:visible";
 
+            //clear all existing row from myTable 
+            let totalRows = table.rows.length ; 
 
+            if(totalRows  != 1){    
+
+                for(let j=1;j<=totalRows-1;j++){ 
+                    table.rows[1].remove();
+                }
+            }
+
+
+            //FILL ALL THE ROWS OF TABLE USING  allUsers array 
             for (let i = 0; i < allUsers.length; i++) {
                  let row = document.createElement("tr"); //row 
                 
@@ -109,18 +182,22 @@
                  let c3 = document.createElement("td");
                  let c4 = document.createElement("td");
                  let c5 = document.createElement("td");
+                 let c6 = document.createElement("td"); 
                  
                 c1.innerHTML = allUsers[i].name ; 
                 c2.innerHTML = allUsers[i].maths; 
                 c3.innerHTML = allUsers[i].sci; 
                 c4.innerHTML = allUsers[i].eng; 
                 c5.innerHTML = allUsers[i].percentage; 
-
+                c6.innerHTML =  "<input type='button' onClick=deleteUser('"+i+"')  value='Delete'/>";
+                    
+ 
                 row.appendChild(c1);
                 row.appendChild(c2);
                 row.appendChild(c3);
                 row.appendChild(c4);
                 row.appendChild(c5);
+                row.appendChild(c6); 
                 
                 table.appendChild(row); 
             }
