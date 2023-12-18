@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="https://codeseven.github.io/toastr/build/toastr.min.css" rel="stylesheet" type="text/css" />
+  
+</head>
+<body>
+    
+    <form id="playerForm"> 
+    Enter Name :  <input type="text" id="name"/><br><br> 
+    Enter Ability  <select id="ability">
+                        <option value="-1">---Select Ability---</option>       
+                        <option value="Batsman">Batsman</option>
+                        <option value="Bowler">Bowler</option>
+                        <option value="AllRounder">AllRounder</option> 
+    </select><Br><Br> 
+        
+    <button type="button" onclick="addData()">Add</button>
+        </form>
+
+ 
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://codeseven.github.io/toastr/build/toastr.min.js"></script>
+        <script src="https://codeseven.github.io/toastr/glimpse.js"></script>
+        <script src="https://codeseven.github.io/toastr/glimpse.toastr.js"></script>
+
+    <script>
+    allPlayers = []
+        function addData(){
+        
+            
+            let name = document.getElementById("name").value;
+            let ability = document.getElementById("ability").value; 
+            let playerForm = document.getElementById("playerForm"); 
+            player = {
+                "name":name,
+                "ability":ability
+            }
+            allPlayers.push(player);
+
+            toastr.success('Player Added!!', 'Admin Says')
+            playerForm.reset(); 
+        }
+
+    </script>
+</body>
+</html>
