@@ -22,9 +22,18 @@
         
     <button type="button" onclick="addData()">Add</button>
         </form>
+        <br><br>  
+        Search Player By Ability  <select id="search"  onchange="listPlayer()">
+            <option value="-1">---Select Ability---</option>       
+            <option value="Batsman">Batsman</option>
+            <option value="Bowler">Bowler</option>
+            <option value="AllRounder">AllRounder</option> 
+</select><Br><Br> 
+<div id="masterDiv"> 
+    <ol id="list">
 
- 
-
+    </ol>
+</div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://codeseven.github.io/toastr/build/toastr.min.js"></script>
@@ -47,6 +56,35 @@
 
             toastr.success('Player Added!!', 'Admin Says')
             playerForm.reset(); 
+        }
+
+
+        function listPlayer(){
+            // alert("listPlayer");
+
+            let search = document.getElementById("search").value ; 
+            let list = document.getElementById("list");// OL 
+            let masterDiv  = document.getElementById("masterDiv");  
+            list.remove(); 
+
+            list = document.createElement("ol");
+            list.setAttribute("id","list"); 
+            masterDiv.appendChild(list); 
+
+            
+            //[name:jack ability:Batsman,name:rock ability:Bowler,xx,xx]
+            for(i=0;i < allPlayers.length;i++){
+                if(allPlayers[i].ability == search){
+                    console.log(allPlayers[i].name);
+                    // document.write(allPlayers[i].name); 
+                    let li = document.createElement("li"); 
+                    li.innerHTML = allPlayers[i].name; 
+                    list.appendChild(li); 
+
+                } 
+            }
+
+            //ol -> html 
         }
 
     </script>
