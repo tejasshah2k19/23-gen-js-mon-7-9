@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    CountryName : <input type="text" id="countryName" />
+    <br><br>
+    <input type="button" value="Save Country"  onclick="saveCountry()"/>
+    <input type="button" value="List Country"  onclick="listCountry()"/>
+
+    <div id="result"></div>
+    <script>
+            let countries = [ ]
+
+            function saveCountry(){
+                let countryName = document.getElementById("countryName").value 
+                countries.push(countryName);
+                document.getElementById("countryName").value = ""
+            }
+
+            function listCountry(){
+               let ul = document.createElement("ul"); 
+
+               for(i=0;i<countries.length;i++){ 
+                    let li = document.createElement("li"); 
+                    li.innerHTML = countries[i];
+                    ul.appendChild(li);  
+               }
+
+                let result = document.getElementById("result")
+                result.appendChild(ul); 
+
+            }
+    </script>
+</body>
+</html>

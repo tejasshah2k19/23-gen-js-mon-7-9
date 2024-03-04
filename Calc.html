@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    No.1 : <input type="text" id="n1"/><br><br> 
+    No.2 : <input type="text" id="n2"/><br><br> 
+
+    Choice : 
+        add: <input type="radio" name="calc" value="add"/> 
+        sub:<input type="radio" name="calc" value="sub"/>
+        mul:<input type="radio" name="calc" value="mul"/>
+<br><br>
+    <input type="button" value="Calc" onclick="addition()"/>
+
+
+    <script>
+        function addition(){
+            let x = parseInt(document.getElementById("n1").value);
+            let y = parseInt(document.getElementById("n2").value);
+            let choice = document.getElementsByName("calc"); // 3 
+            console.log(choice);
+
+            if(choice[0].checked ){
+                ans = x  + y ;
+                alert("addition =" +ans);
+            }else if(choice[1].checked){
+                ans = x - y; 
+                alert("subtraction =" +ans);
+            }else{
+                ans = x*y; 
+                alert("mul =" +ans);
+            }
+             
+            
+        }
+
+    </script>
+    
+</body>
+</html>

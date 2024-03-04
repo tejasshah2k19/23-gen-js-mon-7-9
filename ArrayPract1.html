@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+      Number :   <input type="text" id="n1" /> 
+    <br><br>
+    <input type="button" value="Save" onclick="addElement()"/> 
+    <input type="button" value="Display" onclick="display()"/>
+    <input type="button" value="Sum" onclick="calculateSum()"/>
+    <input type="button" value="Search" onclick="searchItem()"
+
+    <br><br>
+    <div id="result">
+    </div>
+
+
+<script>
+    a = [] 
+    function addElement(){
+       let n1 = parseInt(document.getElementById("n1").value); 
+       a.push(n1);
+       document.getElementById("n1").value = "";
+    }
+
+    function display(){
+        let result  = document.getElementById("result"); 
+        result.innerHTML= a;
+    }
+
+    function calculateSum(){
+        let sum = 0; 
+        for(i=0;i<a.length;i++){
+            sum = sum + a[i];
+        }
+        let result  = document.getElementById("result"); 
+        result.innerHTML= sum;
+        
+    }
+
+    function searchItem(){
+        let n1 = parseInt(document.getElementById("n1").value); // 55 
+        let flag = false; // not found 
+        for(i=0;i<a.length;i++){
+            if(a[i] == n1){
+                flag = true; 
+            }
+        }
+        let result  = document.getElementById("result"); 
+        if(flag == true){
+            result.innerHTML  = " Element Found";
+        }else{
+
+            result.innerHTML = " Element NOT FOUND";
+        }
+    }
+
+</script>
+
+</body>
+</html>

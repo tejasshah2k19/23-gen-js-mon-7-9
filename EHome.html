@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body onload="getAllProducts()">
+    Products: 
+    <div id="result">
+
+
+    </div>
+<script>
+    function getAllProducts(){
+
+        $.ajax({
+            url:"https://portal-2024.onrender.com/product/all",
+            type:"GET",
+            success:function(data){
+                let masterDiv = document.getElementById("result"); 
+                for(let i=0;i<data.length;i++){
+                     
+                   let div = document.createElement("div");
+                   div.innerText=data[i].title+" "+data[i].price+" ";
+                   let img = document.createElement("img")
+                   img.setAttribute("src",data[i].images[0])
+                   img.setAttribute("height","100px")
+                   img.setAttribute("width","100px")
+                   
+                   div.appendChild(img)
+
+                    masterDiv.appendChild(div);
+                    let br = document.createElement("br");
+                    masterDiv.appendChild(br)
+                }
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

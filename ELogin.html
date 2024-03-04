@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <form>
+        Email :  <input type="text" id="email"/><br><br> 
+        Password : <input type="password" id="password"/><br><Br> 
+
+            <input type="button" value="Login" onclick="login()"/>
+
+    </form>
+
+    <script>
+        function login(){
+            let email  = document.getElementById("email").value 
+            let password = document.getElementById("password").value 
+            
+            //jquery 
+            let user = {"email":email,"password":password} 
+
+            $.ajax({
+                    url: 'https://portal-2024.onrender.com/session/login',
+                    type: 'POST',
+                    contentType: 'application/json', // specify the content type
+                    data: JSON.stringify(user), // convert data to JSON string
+                    dataType: 'json', // specify the expected data type
+        
+                    success: function(response) {
+                        // Handle the successful response
+                       alert("Login done");
+                       location.href="EHome.html"
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle errors
+                       alert("Invalid Credentials");
+                    }
+            });
+        }
+    </script>
+</body>
+</html>
+
+<!-- https://portal-2024.onrender.com/session/login 
+    email , password  -->
+
+
