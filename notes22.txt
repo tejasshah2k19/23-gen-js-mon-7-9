@@ -1,0 +1,30 @@
+js -> 
+
+html -> web page -> 
+                    css 
+                    javascript 
+
+             html + css + js 
+
+
+
+types js ?
+
+    1) internal - .html 
+    2) external - .js 
+
+--------------------------------------------------------
+    alert("Welcome");
+
+    prompt("Enter Your Name);
+
+    confirm("Are your sure?");
+
+--------------------------------------------------------     
+<script>
+
+</script> 
+
+body -> end 
+--------------------------------------------------------
+
